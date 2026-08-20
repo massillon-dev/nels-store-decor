@@ -12,11 +12,15 @@
 
 require('dotenv').config();
 const path = require('path');
+const fs = require('fs');
 const crypto = require('crypto');
 const multer = require('multer');
 const sanitize = require('sanitize-filename');
 
 const UPLOAD_DIR = path.join(__dirname, '..', 'public', 'uploads');
+if (!fs.existsSync(UPLOAD_DIR)) {
+  fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+}
 
 const ALLOWED_IMAGE_MIME = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
 const ALLOWED_IMAGE_EXT = ['.jpg', '.jpeg', '.png', '.webp'];
