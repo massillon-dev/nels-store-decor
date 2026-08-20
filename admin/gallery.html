@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie | Administration Nel's Store & Decor</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-shell">
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+      <img src="/images/logo/logo.png" alt="Nel's Store & Decor">
+      <div><strong>Nel's Store</strong><span>Administration</span></div>
+    </div>
+    <nav class="admin-nav">
+      <a href="/admin/dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+      <a href="/admin/gallery" class="active"><i class="fa-solid fa-images"></i> Galerie</a>
+      <a href="/admin/realisations"><i class="fa-solid fa-clipboard-list"></i> Réalisations</a>
+      <a href="/admin/products"><i class="fa-solid fa-basket-shopping"></i> Produits</a>
+      <a href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Commandes</a>
+      <a href="/admin/quotes"><i class="fa-solid fa-file-invoice-dollar"></i> Demandes de devis</a>
+      <a href="/admin/messages"><i class="fa-solid fa-envelope"></i> Messages</a>
+      <a href="/admin/settings"><i class="fa-solid fa-sliders"></i> Paramètres</a>
+      <a href="/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site</a>
+    </nav>
+    <div class="admin-logout">
+      <button id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</button>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div>
+        <button class="admin-menu-toggle" id="adminMenuToggle"><i class="fa-solid fa-bars"></i></button>
+        <h1>Galerie</h1>
+        <p>Ajoutez, modifiez ou supprimez les photos affichées sur le site.</p>
+      </div>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-panel-head"><h2><i class="fa-solid fa-plus"></i> Ajouter une photo</h2></div>
+      <form id="addPhotoForm">
+        <div class="form-group full">
+          <label>Photo ou vidéo <span class="req">*</span></label>
+          <label class="form-file" for="photoFile">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>Cliquez pour choisir une image ou une vidéo (JPG, PNG, WEBP — 5 Mo max / MP4, WEBM, MOV — 50 Mo max)</span>
+            <input type="file" id="photoFile" name="image" accept="image/jpeg,image/jpg,image/png,image/webp,video/mp4,video/webm,video/quicktime" required>
+          </label>
+          <div class="form-file-name" id="photoFileName">Aucun fichier sélectionné</div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Titre <span class="req">*</span></label>
+            <input type="text" name="title" required maxlength="150">
+          </div>
+          <div class="form-group">
+            <label>Catégorie <span class="req">*</span></label>
+            <select name="category" class="category-select" required></select>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label>Description</label>
+          <textarea name="description" maxlength="500" placeholder="Décrivez brièvement cette création..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter à la galerie <i class="fa-solid fa-plus"></i></button>
+      </form>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-panel-head"><h2><i class="fa-solid fa-images"></i> Photos publiées</h2></div>
+      <div class="admin-gallery-grid" id="adminGalleryGrid"></div>
+    </div>
+  </main>
+</div>
+
+<!-- Modal de modification -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal-box">
+    <h3>Modifier la photo</h3>
+    <form id="editForm">
+      <input type="hidden" id="editId">
+      <div class="form-group">
+        <label>Titre</label>
+        <input type="text" id="editTitle" required maxlength="150">
+      </div>
+      <div class="form-group">
+        <label>Catégorie</label>
+        <select id="editCategory" class="category-select" required></select>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="editDescription" maxlength="500"></textarea>
+      </div>
+      <div class="form-group full">
+        <label>Remplacer la photo ou la vidéo (optionnel)</label>
+        <label class="form-file" for="editFile">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <span>Cliquez pour choisir un nouveau fichier</span>
+          <input type="file" id="editFile" accept="image/jpeg,image/jpg,image/png,image/webp,video/mp4,video/webm,video/quicktime">
+        </label>
+        <div class="form-file-name" id="editFileName">Fichier actuel conservé</div>
+      </div>
+      <div class="modal-close-row">
+        <button type="button" class="btn btn-ghost" id="cancelEditModal">Annuler</button>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </form>
+    <button type="button" id="closeEditModal" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:1.1rem; color:var(--ink-soft);"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+</div>
+
+<script src="/js/admin-common.js"></script>
+<script src="/js/admin-gallery.js"></script>
+</body>
+</html>

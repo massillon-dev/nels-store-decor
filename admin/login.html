@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion Administration | Nel's Store & Decor</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+
+<div class="login-wrap">
+  <div class="login-card">
+    <img src="/images/logo/logo.png" alt="Nel's Store & Decor">
+    <h1>Espace Administration</h1>
+    <p class="sub">Connectez-vous pour gérer la galerie, les réalisations, les messages et les demandes de devis.</p>
+
+    <div class="form-alert" id="loginAlert"></div>
+
+    <form id="loginForm" novalidate>
+      <div class="form-group">
+        <label>Nom d'utilisateur</label>
+        <input type="text" name="username" required autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label>Mot de passe</label>
+        <input type="password" name="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Se connecter <i class="fa-solid fa-arrow-right"></i></button>
+    </form>
+
+    <p style="margin-top:26px;"><a href="/" style="color:var(--rose); font-size:0.85rem;"><i class="fa-solid fa-arrow-left"></i> Retour au site</a></p>
+  </div>
+</div>
+
+<script src="/js/admin-login.js"></script>
+</body>
+</html>

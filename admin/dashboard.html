@@ -1,0 +1,104 @@
+npm <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tableau de bord | Administration Nel's Store & Decor</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-shell">
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+      <img src="/images/logo/logo.png" alt="Nel's Store & Decor">
+      <div><strong>Nel's Store</strong><span>Administration</span></div>
+    </div>
+    <nav class="admin-nav">
+      <a href="/admin/dashboard" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+      <a href="/admin/gallery"><i class="fa-solid fa-images"></i> Galerie</a>
+      <a href="/admin/realisations"><i class="fa-solid fa-clipboard-list"></i> Réalisations</a>
+      <a href="/admin/products"><i class="fa-solid fa-basket-shopping"></i> Produits</a>
+      <a href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Commandes</a>
+      <a href="/admin/quotes"><i class="fa-solid fa-file-invoice-dollar"></i> Demandes de devis</a>
+      <a href="/admin/messages"><i class="fa-solid fa-envelope"></i> Messages</a>
+      <a href="/admin/settings"><i class="fa-solid fa-sliders"></i> Paramètres</a>
+      <a href="/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site</a>
+    </nav>
+    <div class="admin-logout">
+      <button id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</button>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div>
+        <button class="admin-menu-toggle" id="adminMenuToggle"><i class="fa-solid fa-bars"></i></button>
+        <h1>Tableau de bord</h1>
+        <p>Bienvenue, <span data-admin-username>admin</span> 👋</p>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #d62876, #b81e63);"><i class="fa-solid fa-images"></i></div>
+        <div><h3 id="statPhotos">0</h3><span>Photos dans la galerie</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #25a35a, #1c6b3f);"><i class="fa-solid fa-basket-shopping"></i></div>
+        <div><h3 id="statProducts">0</h3><span>Produits en boutique</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #2c4270, #1b2a4a);"><i class="fa-solid fa-cart-shopping"></i></div>
+        <div><h3 id="statOrders">0</h3><span>Commandes reçues</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #e882b0, #d62876);"><i class="fa-solid fa-cart-plus"></i></div>
+        <div><h3 id="statNewOrders">0</h3><span>Nouvelles commandes</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #c8a96b, #a5854a);"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+        <div><h3 id="statQuotes">0</h3><span>Demandes de devis</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #1b2a4a, #2c4270);"><i class="fa-solid fa-envelope"></i></div>
+        <div><h3 id="statMessages">0</h3><span>Messages reçus</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #e882b0, #d62876);"><i class="fa-solid fa-envelope-open-text"></i></div>
+        <div><h3 id="statUnread">0</h3><span>Messages non lus</span></div>
+      </div>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-panel-head">
+        <h2><i class="fa-solid fa-clipboard-list"></i> Nombre de projets réalisés</h2>
+      </div>
+      <h3 style="font-size:2rem; margin:0;" id="statProjects">0</h3>
+      <p style="margin-top:10px;">Retrouvez et gérez tous vos projets dans la section <a href="/admin/realisations" style="color:var(--rose); font-weight:600;">Réalisations</a>.</p>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-panel-head"><h2><i class="fa-solid fa-bolt"></i> Actions rapides</h2></div>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="/admin/gallery" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Ajouter une photo</a>
+        <a href="/admin/products" class="btn btn-gold btn-sm"><i class="fa-solid fa-plus"></i> Ajouter un produit</a>
+        <a href="/admin/realisations" class="btn btn-ghost btn-sm"><i class="fa-solid fa-plus"></i> Publier une réalisation</a>
+        <a href="/admin/orders" class="btn btn-ghost btn-sm"><i class="fa-solid fa-cart-shopping"></i> Voir les commandes</a>
+        <a href="/admin/quotes" class="btn btn-ghost btn-sm"><i class="fa-solid fa-file-invoice-dollar"></i> Voir les devis</a>
+        <a href="/admin/messages" class="btn btn-ghost btn-sm"><i class="fa-solid fa-envelope"></i> Voir les messages</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/admin-common.js"></script>
+<script src="/js/admin-dashboard.js"></script>
+</body>
+</html>

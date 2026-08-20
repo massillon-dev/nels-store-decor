@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie | Nel's Store & Decor</title>
+<meta name="description" content="Découvrez la galerie photo de Nel's Store & Decor : bouquets, mariages, événements, décoration et compositions florales.">
+<meta property="og:title" content="Galerie | Nel's Store & Decor">
+<meta property="og:image" content="/images/logo/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png">
+<link rel="apple-touch-icon" href="/images/logo/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="navbar-brand">
+      <img src="/images/logo/logo.png" alt="Nel's Store & Decor" class="zoomable">
+    </a>
+    <nav class="navbar-menu" id="navbarMenu">
+      <a href="/" data-i18n="nav_home">Accueil</a>
+      <a href="/a-propos" data-i18n="nav_about">À propos</a>
+      <a href="/services" data-i18n="nav_services">Services</a>
+      <a href="/boutique" data-i18n="nav_shop">Boutique</a>
+      <a href="/galerie" class="active" data-i18n="nav_gallery">Galerie</a>
+      <a href="/realisations" data-i18n="nav_realisations">Réalisations</a>
+      <a href="/contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="navbar-actions">
+      <div class="navbar-phones"><a data-phone-1-link href="tel:"><i class="fa-solid fa-phone"></i> <span data-phone-1-text></span></a></div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+
+<section class="section section-after-nav">
+  <div class="container">
+    <div class="gallery-filters" id="galleryFilters"></div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="spinner"></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2 data-i18n="gallery_cta_title">Une création vous inspire ?</h2>
+    <p data-i18n="gallery_cta_text">Parlons de votre projet et donnons-lui vie ensemble.</p>
+    <div class="hero-actions">
+      <a href="/contact" class="btn btn-outline" data-i18n="btn_contact_us">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<div id="whatsapp-placeholder"></div>
+<div id="lightbox-placeholder"></div>
+
+<script src="/js/partials.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/shop.js"></script>
+</body>
+</html>

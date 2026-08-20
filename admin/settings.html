@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paramètres | Administration Nel's Store & Decor</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-shell">
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+      <img src="/images/logo/logo.png" alt="Nel's Store & Decor">
+      <div><strong>Nel's Store</strong><span>Administration</span></div>
+    </div>
+    <nav class="admin-nav">
+      <a href="/admin/dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+      <a href="/admin/gallery"><i class="fa-solid fa-images"></i> Galerie</a>
+      <a href="/admin/realisations"><i class="fa-solid fa-clipboard-list"></i> Réalisations</a>
+      <a href="/admin/products"><i class="fa-solid fa-basket-shopping"></i> Produits</a>
+      <a href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Commandes</a>
+      <a href="/admin/quotes"><i class="fa-solid fa-file-invoice-dollar"></i> Demandes de devis</a>
+      <a href="/admin/messages"><i class="fa-solid fa-envelope"></i> Messages</a>
+      <a href="/admin/settings" class="active"><i class="fa-solid fa-sliders"></i> Paramètres</a>
+      <a href="/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site</a>
+    </nav>
+    <div class="admin-logout">
+      <button id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</button>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div>
+        <button class="admin-menu-toggle" id="adminMenuToggle"><i class="fa-solid fa-bars"></i></button>
+        <h1>Paramètres du site</h1>
+        <p>Changez les photos de présentation du site directement depuis votre navigateur.</p>
+      </div>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-panel-head"><h2><i class="fa-solid fa-image"></i> Photo ou vidéo d'accueil (grande image en haut de la page d'accueil)</h2></div>
+      <p style="font-size:0.85rem; color:var(--ink-soft); margin:-10px 0 18px;">Vous pouvez mettre une vidéo ici pour un effet de fond animé (elle sera lue automatiquement, en boucle, sans son).</p>
+      <div class="site-image-row">
+        <img src="/images/hero.jpg" alt="Aperçu photo héro" class="site-image-preview" id="heroPreview">
+        <form class="site-image-form" data-key="hero">
+          <label class="form-file" for="heroFile">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>Cliquez pour choisir une image ou une vidéo (JPG, PNG, WEBP — 5 Mo max / MP4, WEBM, MOV — 50 Mo max)</span>
+            <input type="file" id="heroFile" accept="image/jpeg,image/jpg,image/png,image/webp,video/mp4,video/webm,video/quicktime" required>
+          </label>
+          <div class="form-file-name" data-filename>Aucun fichier sélectionné</div>
+          <button type="submit" class="btn btn-primary btn-sm" style="margin-top:14px;">Enregistrer cette photo <i class="fa-solid fa-check"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-panel-head"><h2><i class="fa-solid fa-image"></i> Photo de la section "Bienvenue" (page d'accueil)</h2></div>
+      <div class="site-image-row">
+        <img src="/images/intro.jpg" alt="Aperçu photo bienvenue" class="site-image-preview" id="introPreview">
+        <form class="site-image-form" data-key="intro">
+          <label class="form-file" for="introFile">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>Cliquez pour choisir une image ou une vidéo (JPG, PNG, WEBP — 5 Mo max / MP4, WEBM, MOV — 50 Mo max)</span>
+            <input type="file" id="introFile" accept="image/jpeg,image/jpg,image/png,image/webp,video/mp4,video/webm,video/quicktime" required>
+          </label>
+          <div class="form-file-name" data-filename>Aucun fichier sélectionné</div>
+          <button type="submit" class="btn btn-primary btn-sm" style="margin-top:14px;">Enregistrer cette photo <i class="fa-solid fa-check"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-panel-head"><h2><i class="fa-solid fa-image"></i> Photo de la page "À propos"</h2></div>
+      <div class="site-image-row">
+        <img src="/images/about.jpg" alt="Aperçu photo à propos" class="site-image-preview" id="aboutPreview">
+        <form class="site-image-form" data-key="about">
+          <label class="form-file" for="aboutFile">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>Cliquez pour choisir une image ou une vidéo (JPG, PNG, WEBP — 5 Mo max / MP4, WEBM, MOV — 50 Mo max)</span>
+            <input type="file" id="aboutFile" accept="image/jpeg,image/jpg,image/png,image/webp,video/mp4,video/webm,video/quicktime" required>
+          </label>
+          <div class="form-file-name" data-filename>Aucun fichier sélectionné</div>
+          <button type="submit" class="btn btn-primary btn-sm" style="margin-top:14px;">Enregistrer cette photo <i class="fa-solid fa-check"></i></button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/admin-common.js"></script>
+<script src="/js/admin-settings.js"></script>
+</body>
+</html>

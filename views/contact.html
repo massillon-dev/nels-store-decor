@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Nel's Store & Decor</title>
+<meta name="description" content="Contactez Nel's Store & Decor par téléphone, WhatsApp, email ou via notre formulaire de contact.">
+<meta property="og:title" content="Contact | Nel's Store & Decor">
+<meta property="og:image" content="/images/logo/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png">
+<link rel="apple-touch-icon" href="/images/logo/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="navbar-brand">
+      <img src="/images/logo/logo.png" alt="Nel's Store & Decor" class="zoomable">
+    </a>
+    <nav class="navbar-menu" id="navbarMenu">
+      <a href="/" data-i18n="nav_home">Accueil</a>
+      <a href="/a-propos" data-i18n="nav_about">À propos</a>
+      <a href="/services" data-i18n="nav_services">Services</a>
+      <a href="/boutique" data-i18n="nav_shop">Boutique</a>
+      <a href="/galerie" data-i18n="nav_gallery">Galerie</a>
+      <a href="/realisations" data-i18n="nav_realisations">Réalisations</a>
+      <a href="/contact" class="active" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="navbar-actions">
+      <div class="navbar-phones"><a data-phone-1-link href="tel:"><i class="fa-solid fa-phone"></i> <span data-phone-1-text></span></a></div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+
+<section class="section section-after-nav">
+  <div class="container">
+    <div class="contact-grid">
+      <div data-reveal>
+        <div class="contact-info-card">
+          <div class="contact-info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <h4 data-i18n="contact_phone_h">Téléphone</h4>
+              <a data-phone-1 href="tel:"></a><br>
+              <a data-phone-2 href="tel:"></a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <h4 data-i18n="contact_whatsapp_h">WhatsApp</h4>
+              <a data-whatsapp="1" href="#" target="_blank" rel="noopener">Discuter sur WhatsApp 1</a><br>
+              <a data-whatsapp="2" href="#" target="_blank" rel="noopener">Discuter sur WhatsApp 2</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h4 data-i18n="contact_email_h">Email</h4>
+              <a data-email href="mailto:"></a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <h4 data-i18n="contact_address_h">Adresse</h4>
+              <p data-address></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <h4 data-i18n="contact_hours_h">Horaires</h4>
+              <p data-hours-weekday></p>
+              <p data-hours-saturday></p>
+              <p data-hours-sunday></p>
+            </div>
+          </div>
+          <div class="social-row">
+            <a data-social="instagram" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+            <a data-social="facebook" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+            <a data-social="tiktok" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+            <a data-social="pinterest" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-pinterest-p"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal>
+        <div class="form-card">
+          <h3 data-i18n="contact_form_title">Envoyez-nous un message</h3>
+          <p style="margin-bottom:26px;" data-i18n="contact_form_subtitle">Remplissez le formulaire ci-dessous, nous vous répondrons dans les meilleurs délais.</p>
+          <div class="form-alert" id="contactAlert"></div>
+          <form id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label><span data-i18n="lbl_fullname">Nom complet</span> <span class="req">*</span></label>
+                <input type="text" name="full_name" required maxlength="120">
+              </div>
+              <div class="form-group">
+                <label><span data-i18n="lbl_phone">Téléphone</span> <span class="req">*</span></label>
+                <input type="tel" name="phone" required maxlength="30">
+              </div>
+            </div>
+            <div class="form-group">
+              <label><span data-i18n="lbl_email">Email</span> <span class="req">*</span></label>
+              <input type="email" name="email" required maxlength="150">
+            </div>
+            <div class="form-group">
+              <label><span data-i18n="lbl_subject">Sujet</span> <span class="req">*</span></label>
+              <input type="text" name="subject" required maxlength="150">
+            </div>
+            <div class="form-group">
+              <label><span data-i18n="lbl_message">Message</span> <span class="req">*</span></label>
+              <textarea name="message" required maxlength="3000" placeholder="Décrivez votre demande..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block"><span data-i18n="btn_send_message">Envoyer le message</span> <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="whatsapp-placeholder"></div>
+
+<script src="/js/partials.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réalisations | Administration Nel's Store & Decor</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-shell">
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+      <img src="/images/logo/logo.png" alt="Nel's Store & Decor">
+      <div><strong>Nel's Store</strong><span>Administration</span></div>
+    </div>
+    <nav class="admin-nav">
+      <a href="/admin/dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+      <a href="/admin/gallery"><i class="fa-solid fa-images"></i> Galerie</a>
+      <a href="/admin/realisations" class="active"><i class="fa-solid fa-clipboard-list"></i> Réalisations</a>
+      <a href="/admin/products"><i class="fa-solid fa-basket-shopping"></i> Produits</a>
+      <a href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Commandes</a>
+      <a href="/admin/quotes"><i class="fa-solid fa-file-invoice-dollar"></i> Demandes de devis</a>
+      <a href="/admin/messages"><i class="fa-solid fa-envelope"></i> Messages</a>
+      <a href="/admin/settings"><i class="fa-solid fa-sliders"></i> Paramètres</a>
+      <a href="/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site</a>
+    </nav>
+    <div class="admin-logout">
+      <button id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</button>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div>
+        <button class="admin-menu-toggle" id="adminMenuToggle"><i class="fa-solid fa-bars"></i></button>
+        <h1>Réalisations</h1>
+        <p>Publiez les projets réalisés pour Nel's Store &amp; Decor.</p>
+      </div>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-panel-head"><h2><i class="fa-solid fa-plus"></i> Publier une réalisation</h2></div>
+      <form id="addRealisationForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Titre du projet <span class="req">*</span></label>
+            <input type="text" name="title" required maxlength="150">
+          </div>
+          <div class="form-group">
+            <label>Type d'événement</label>
+            <input type="text" name="event_type" maxlength="100" placeholder="Ex : Mariage, Anniversaire...">
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" name="event_date">
+          </div>
+          <div class="form-group">
+            <label>Lieu</label>
+            <input type="text" name="location" maxlength="150">
+          </div>
+        </div>
+        <div class="form-group full">
+          <label>Description</label>
+          <textarea name="description" maxlength="1500" placeholder="Décrivez le projet réalisé..."></textarea>
+        </div>
+        <div class="form-group full">
+          <label>Photos ou vidéos du projet</label>
+          <label class="form-file" for="realisationPhotos">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>Cliquez pour choisir des photos et/ou vidéos (10 max)</span>
+            <input type="file" id="realisationPhotos" name="photos" accept="image/jpeg,image/jpg,image/png,image/webp,video/mp4,video/webm,video/quicktime" multiple>
+          </label>
+          <div class="form-file-name" id="realisationFileName">Aucun fichier sélectionné</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Publier la réalisation <i class="fa-solid fa-plus"></i></button>
+      </form>
+    </div>
+
+    <div class="admin-panel">
+      <div class="admin-panel-head"><h2><i class="fa-solid fa-clipboard-list"></i> Projets publiés</h2></div>
+      <div class="admin-gallery-grid" id="adminRealisationsGrid"></div>
+    </div>
+  </main>
+</div>
+
+<!-- Modal de modification -->
+<div class="modal-overlay" id="editRealisationModal">
+  <div class="modal-box" style="max-width:600px;">
+    <h3>Modifier la réalisation</h3>
+    <form id="editRealisationForm">
+      <input type="hidden" id="editRealisationId">
+      <div class="form-group">
+        <label>Titre du projet</label>
+        <input type="text" id="editRealisationTitle" required maxlength="150">
+      </div>
+      <div class="form-group">
+        <label>Type d'événement</label>
+        <input type="text" id="editRealisationEventType" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" id="editRealisationDate">
+      </div>
+      <div class="form-group">
+        <label>Lieu</label>
+        <input type="text" id="editRealisationLocation" maxlength="150">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="editRealisationDescription" maxlength="1500"></textarea>
+      </div>
+
+      <div class="form-group full">
+        <label>Photos et vidéos actuelles</label>
+        <p style="font-size:0.8rem; color:var(--ink-soft); margin:0 0 10px;">Cliquez sur une photo pour la retirer. La première photo restante devient automatiquement la photo de couverture.</p>
+        <div id="editRealisationCurrentPhotos" style="display:flex; flex-wrap:wrap; gap:10px;"></div>
+      </div>
+
+      <div class="form-group full">
+        <label>Ajouter de nouvelles photos</label>
+        <label class="form-file" for="editRealisationNewPhotos">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <span>Cliquez pour ajouter des photos et/ou vidéos</span>
+          <input type="file" id="editRealisationNewPhotos" accept="image/jpeg,image/jpg,image/png,image/webp,video/mp4,video/webm,video/quicktime" multiple>
+        </label>
+        <div class="form-file-name" id="editRealisationNewPhotosName">Aucun fichier sélectionné</div>
+      </div>
+
+      <div class="modal-close-row">
+        <button type="button" class="btn btn-ghost" id="cancelEditRealisationModal">Annuler</button>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </form>
+    <button type="button" id="closeEditRealisationModal" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:1.1rem; color:var(--ink-soft);"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+</div>
+
+<script src="/js/admin-common.js"></script>
+<script src="/js/admin-realisations.js"></script>
+</body>
+</html>

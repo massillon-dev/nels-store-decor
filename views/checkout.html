@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ma commande | Nel's Store & Decor</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png">
+<link rel="apple-touch-icon" href="/images/logo/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="navbar-brand">
+      <img src="/images/logo/logo.png" alt="Nel's Store & Decor" class="zoomable">
+    </a>
+    <nav class="navbar-menu" id="navbarMenu">
+      <a href="/" data-i18n="nav_home">Accueil</a>
+      <a href="/a-propos" data-i18n="nav_about">À propos</a>
+      <a href="/services" data-i18n="nav_services">Services</a>
+      <a href="/boutique" data-i18n="nav_shop">Boutique</a>
+      <a href="/galerie" data-i18n="nav_gallery">Galerie</a>
+      <a href="/realisations" data-i18n="nav_realisations">Réalisations</a>
+      <a href="/contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="navbar-actions">
+      <div class="navbar-phones">
+        <a data-phone-1-link href="tel:"><i class="fa-solid fa-phone"></i> <span data-phone-1-text></span></a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+
+<section class="section section-after-nav">
+  <div class="container" style="max-width:760px;">
+
+    <div id="checkoutSuccess" class="form-card" style="display:none; text-align:center;">
+      <i class="fa-solid fa-circle-check" style="font-size:3rem; color:#1c6b3f; margin-bottom:20px; display:block;"></i>
+      <h2 data-i18n="checkout_success_title">Merci pour votre commande !</h2>
+      <p style="margin:14px 0 26px;" data-i18n="checkout_success_text">Nous avons bien reçu votre commande et vous contacterons très rapidement pour confirmer les détails, le paiement et la livraison.</p>
+      <a href="/boutique" class="btn btn-primary" data-i18n="btn_continue_shopping">Continuer mes achats</a>
+    </div>
+
+    <div class="form-card" data-reveal>
+      <h3 style="margin-bottom:20px;" data-i18n="checkout_summary_title">Récapitulatif de votre panier</h3>
+      <div class="checkout-summary" id="checkoutSummary"></div>
+
+      <div class="form-alert" id="checkoutAlert"></div>
+
+      <form id="checkoutForm" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label><span data-i18n="lbl_fullname">Nom complet</span> <span class="req">*</span></label>
+            <input type="text" name="full_name" required maxlength="120">
+          </div>
+          <div class="form-group">
+            <label><span data-i18n="lbl_phone">Téléphone</span> <span class="req">*</span></label>
+            <input type="tel" name="phone" required maxlength="30">
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i18n="lbl_email">Email</label>
+          <input type="email" name="email" maxlength="150">
+        </div>
+        <div class="form-group full">
+          <label><span data-i18n="lbl_address">Adresse de livraison</span> <span class="req">*</span></label>
+          <input type="text" name="address" required maxlength="250" placeholder="Quartier, ville, repère...">
+        </div>
+        <div class="form-group">
+          <label data-i18n="lbl_delivery_date">Date de livraison souhaitée</label>
+          <input type="date" name="delivery_date">
+        </div>
+        <div class="form-group full">
+          <label data-i18n="lbl_notes">Remarques (optionnel)</label>
+          <textarea name="notes" maxlength="1000" placeholder="Instructions particulières, message pour la carte, etc."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block"><span data-i18n="btn_confirm_order">Confirmer ma commande</span> <i class="fa-solid fa-check"></i></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="whatsapp-placeholder"></div>
+
+<script src="/js/partials.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/shop.js"></script>
+</body>
+</html>

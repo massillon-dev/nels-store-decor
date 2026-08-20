@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nel's Store & Decor | Art Floral & Décoration</title>
+<meta name="description" content="Nel's Store & Decor — Art floral, bouquets personnalisés, décoration de mariage et d'événements. Créations florales sur mesure pour vos moments précieux.">
+<meta property="og:title" content="Nel's Store & Decor | Art Floral & Décoration">
+<meta property="og:description" content="Créations florales, décoration et arrangements personnalisés pour vos moments les plus précieux.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/images/logo/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png">
+<link rel="apple-touch-icon" href="/images/logo/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="navbar-brand">
+      <img src="/images/logo/logo.png" alt="Nel's Store & Decor" class="zoomable">
+    </a>
+    <nav class="navbar-menu" id="navbarMenu">
+      <a href="/" class="active" data-i18n="nav_home">Accueil</a>
+      <a href="/a-propos" data-i18n="nav_about">À propos</a>
+      <a href="/services" data-i18n="nav_services">Services</a>
+      <a href="/boutique" data-i18n="nav_shop">Boutique</a>
+      <a href="/galerie" data-i18n="nav_gallery">Galerie</a>
+      <a href="/realisations" data-i18n="nav_realisations">Réalisations</a>
+      <a href="/contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="navbar-actions">
+      <div class="navbar-phones">
+        <a data-phone-1-link href="tel:"><i class="fa-solid fa-phone"></i> <span data-phone-1-text></span></a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg" style="background-image:url('/images/hero.jpg');"></div>
+  <video class="hero-bg" id="heroBgVideo" style="display:none; object-fit:cover;" muted loop playsinline autoplay></video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow fade-in-up" data-i18n="home_eyebrow">Nel's Store &amp; Decor</span>
+    <h1 class="fade-in-up delay-1" data-i18n="home_hero_title">L'art floral qui transforme vos moments en souvenirs.</h1>
+    <p class="lead fade-in-up delay-2" data-i18n="home_hero_subtitle">Créations florales, décoration et arrangements personnalisés pour vos moments les plus précieux.</p>
+    <div class="hero-actions fade-in-up delay-3">
+      <a href="/galerie" class="btn btn-primary" data-i18n="btn_discover">Découvrir nos créations</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><i class="fa-solid fa-chevron-down"></i> <span data-i18n="home_scroll">Découvrir</span></div>
+</section>
+
+<!-- ================= INTRODUCTION ================= -->
+<section class="section">
+  <div class="container">
+    <div class="intro-grid">
+      <div data-reveal>
+        <span class="eyebrow" data-i18n="home_welcome_eyebrow">Bienvenue</span>
+        <h2 data-i18n="home_welcome_title">Bienvenue chez Nel's Store &amp; Decor</h2>
+        <p style="font-size:1.05rem; margin: 20px 0 30px;" data-i18n="home_welcome_text">Chez Nel's Store &amp; Decor, chaque création est pensée pour raconter une histoire. Nous transformons les fleurs, les couleurs et les espaces en expériences uniques et mémorables.</p>
+        <a href="/a-propos" class="btn btn-navy"><span data-i18n="btn_learn_more">En savoir plus</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="intro-image" data-reveal>
+        <img src="/images/intro.jpg" alt="Composition florale Nel's Store & Decor" class="zoomable" id="introImg">
+        <div class="intro-image-badge">
+          <strong>10+</strong>
+          <span data-i18n="home_creations_count_label">Créations florales</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow" data-i18n="home_services_eyebrow">Nos services</span>
+      <h2 data-i18n="home_services_title">Une expertise florale, pour chaque occasion</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-reveal>
+        <div class="service-icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3 data-i18n="svc1_title">Bouquets personnalisés</h3>
+        <p data-i18n="svc1_desc">Création de bouquets adaptés à chaque occasion, dans le respect de vos goûts et de vos couleurs préférées.</p>
+        <a href="/services" class="link-more"><span data-i18n="btn_learn_more">En savoir plus</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon"><i class="fa-solid fa-rings-wedding"></i></div>
+        <h3 data-i18n="svc2_title">Décoration de mariage</h3>
+        <p data-i18n="svc2_desc">Décoration florale et mise en scène de mariages, de la cérémonie à la réception.</p>
+        <a href="/services" class="link-more"><span data-i18n="btn_learn_more">En savoir plus</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+        <h3 data-i18n="svc3_title">Décoration événementielle</h3>
+        <p data-i18n="svc3_desc">Création d'ambiances florales sur mesure pour vos événements professionnels et privés.</p>
+        <a href="/services" class="link-more"><span data-i18n="btn_learn_more">En savoir plus</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon"><i class="fa-solid fa-cake-candles"></i></div>
+        <h3 data-i18n="svc4_title">Anniversaires &amp; célébrations</h3>
+        <p data-i18n="svc4_desc">Décoration personnalisée pour rendre chaque célébration réellement spéciale et mémorable.</p>
+        <a href="/services" class="link-more"><span data-i18n="btn_learn_more">En savoir plus</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
+        <h3 data-i18n="svc5_title">Décoration intérieure</h3>
+        <p data-i18n="svc5_desc">Compositions florales et arrangements élégants pour embellir durablement vos espaces.</p>
+        <a href="/services" class="link-more"><span data-i18n="btn_learn_more">En savoir plus</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon"><i class="fa-solid fa-gift"></i></div>
+        <h3 data-i18n="svc6_title">Créations personnalisées</h3>
+        <p data-i18n="svc6_desc">Des créations conçues sur mesure selon les besoins, les envies et le budget du client.</p>
+        <a href="/services" class="link-more"><span data-i18n="btn_learn_more">En savoir plus</span> <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERIE APERÇU ================= -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow" data-i18n="home_gallery_eyebrow">Galerie</span>
+      <h2 data-i18n="home_gallery_title">Nos plus belles créations</h2>
+    </div>
+    <div class="gallery-grid" id="homeGalleryPreview">
+      <div class="spinner"></div>
+    </div>
+    <div class="text-center" style="margin-top:44px;">
+      <a href="/galerie" class="btn btn-gold"><span data-i18n="btn_see_all_gallery">Voir toute la galerie</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TÉMOIGNAGES ================= -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow" data-i18n="home_testimonials_eyebrow">Témoignages</span>
+      <h2 data-i18n="home_testimonials_title">Ce que disent nos clients</h2>
+    </div>
+    <div class="testimonial-grid" id="testimonialsGrid"></div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta-band">
+  <div class="container">
+    <h2 data-i18n="home_cta_title">Prêt à donner vie à votre projet floral ?</h2>
+    <p data-i18n="home_cta_text">Contactez-nous dès aujourd'hui pour une décoration florale sur mesure.</p>
+    <div class="hero-actions">
+      <a href="/contact" class="btn btn-navy" data-i18n="btn_contact_us">Nous contacter</a>
+      <a href="/galerie" class="btn btn-outline" data-i18n="btn_see_creations">Voir nos créations</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<div id="footer-placeholder"></div>
+<div id="whatsapp-placeholder"></div>
+
+<script src="/js/partials.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demandes de devis | Administration Nel's Store & Decor</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+
+<div class="admin-shell">
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+      <img src="/images/logo/logo.png" alt="Nel's Store & Decor">
+      <div><strong>Nel's Store</strong><span>Administration</span></div>
+    </div>
+    <nav class="admin-nav">
+      <a href="/admin/dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+      <a href="/admin/gallery"><i class="fa-solid fa-images"></i> Galerie</a>
+      <a href="/admin/realisations"><i class="fa-solid fa-clipboard-list"></i> Réalisations</a>
+      <a href="/admin/products"><i class="fa-solid fa-basket-shopping"></i> Produits</a>
+      <a href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Commandes</a>
+      <a href="/admin/quotes" class="active"><i class="fa-solid fa-file-invoice-dollar"></i> Demandes de devis</a>
+      <a href="/admin/messages"><i class="fa-solid fa-envelope"></i> Messages</a>
+      <a href="/admin/settings"><i class="fa-solid fa-sliders"></i> Paramètres</a>
+      <a href="/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site</a>
+    </nav>
+    <div class="admin-logout">
+      <button id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</button>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div>
+        <button class="admin-menu-toggle" id="adminMenuToggle"><i class="fa-solid fa-bars"></i></button>
+        <h1>Demandes de devis</h1>
+        <p>Suivez et gérez toutes les demandes de devis reçues.</p>
+      </div>
+    </div>
+
+    <div class="admin-panel">
+      <div style="overflow-x:auto;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Prestation</th>
+              <th>Date événement</th>
+              <th>Lieu</th>
+              <th>Budget</th>
+              <th>Inspiration</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="quotesTableBody"></tbody>
+        </table>
+        <div class="empty-state" id="quotesEmpty" style="display:none;">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <p>Aucune demande de devis pour le moment.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/admin-common.js"></script>
+<script src="/js/admin-quotes.js"></script>
+</body>
+</html>
